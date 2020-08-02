@@ -1,0 +1,20 @@
+{
+  "name": "curious-coder-blog",
+  "version": "1.0.0",
+  "description": "My first fully functional full MERN stack app - a blog application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "dev": "concurrently \"npm run development\" \"cd client && npm start\""
+  },
+  "author": "Harry Davis",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.27",
+    "path": "^0.12.7"
+  }
+}
