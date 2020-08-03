@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 //Images
@@ -7,25 +7,19 @@ import SmallLightLogo from '../assets/Small Light Logo.png';
 import DarkLogo from '../assets/Dark Logo.png';
 import SmallDarkLogo from '../assets/Small Dark Logo.png';
 
+//Context
+import { ViewContext } from './../context/ViewContext';
+
 const Navbar = () => {
-  const [isMin, setIsMin] = useState(false);
-  const [isDark, setIsDark] = useState(localStorage.getItem('dark') === 'true' ? true : false);
+  const viewContext = useContext(ViewContext);
 
-  const threshold = 425;
-
-  useEffect(() => {
-    const width = window.visualViewport.width;
-
-    setIsMin((width < threshold));
-    localStorage.setItem('min', isMin);
-
-    setIsDark(localStorage.getItem('dark') === 'true' ? true : false);
-
-  }, [isMin]);
 
   const renderLogo = () => {
     let image = null;
-    console.log({ isDark, isMin })
+
+    const isMin = viewContext.getIsMin();
+    const isDark = viewContext.getIsDark();
+
     if (isMin === true) {
       if (isDark === true) {
         image = SmallDarkLogo;
@@ -50,25 +44,8 @@ const Navbar = () => {
   }
 
   const toggleTheme = () => {
-    if (document.body.getAttribute('data-theme') === 'dark') {
-      document.body.removeAttribute('data-theme');
-      localStorage.setItem('dark', false);
-      setIsDark(false);
-    } else {
-      document.body.setAttribute('data-theme', 'dark');
-      localStorage.setItem('dark', true);
-      setIsDark(true);
-    }
+    viewContext.setDark(!viewContext.getIsDark())
   }
-
-  const onResize = () => {
-    const width = window.visualViewport.width;
-
-    setIsMin((width < threshold))
-    localStorage.setItem('min', isMin);
-  }
-
-  window.onresize = onResize;
 
   return (
     <nav className='navbar'>
