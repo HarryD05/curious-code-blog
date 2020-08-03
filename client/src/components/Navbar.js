@@ -52,7 +52,7 @@ const Navbar = () => {
       <div className='nav-container'>
         {renderLogo()}
         <div id='links'>
-          <Link to='/posts' className='link'>
+          <Link to='/all-posts' className='link'>
             Posts
           </Link>
           <Link to='/contacts' className='link' id='contacts-link'>
