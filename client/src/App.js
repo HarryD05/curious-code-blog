@@ -27,8 +27,8 @@ class App extends React.Component {
           <Route path='/contacts' component={Contacts} />
           <Route exact path='/posts' component={PostList} />
           <Route exact path='/posts/:id' component={Post} />
-          <Route exact path='/admin' component={Login} />
-          <ProtectedRoute exact path='/admin/create' component={Create} />
+          <Route exact path='/secret' component={Login} />
+          <ProtectedRoute exact path='/secret/create' component={Create} />
 
           <Route path='*' component={Unknown} />
         </Switch>
