@@ -9,7 +9,7 @@ class PostListItem extends React.Component {
   }
 
   onShowPost() {
-    window.location.pathname = `/all-posts/${this.props.post._id}`;
+    window.location.pathname = `/posts/${this.props.post._id}`;
   }
 
   renderDate(date_string) {
@@ -33,7 +33,7 @@ class PostListItem extends React.Component {
     const { post } = this.props;
 
     return (
-      <Link to={`/all-posts/${post._id}`} className='post-list-item'>
+      <Link to={`/posts/${post._id}`} className='post-list-item'>
         <h3 className='title'>{post.title}</h3>
         <span className='date'>{this.renderDate(post.createdAt)}</span>
         <div className='tags'>{this.renderTags(post.tags)}</div>

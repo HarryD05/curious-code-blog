@@ -36,9 +36,6 @@ const Navbar = () => {
 
     return (
       <div id='brand'>
-        <Link to='secret' className="secret">
-          <div></div>
-        </Link>
         <Link to='/'>
           <div id='brand-section'><img src={image} alt='brain logo' /></div>
         </Link>
@@ -56,7 +53,7 @@ const Navbar = () => {
 
         {renderLogo()}
         <div id='links'>
-          <Link to='/all-posts' className='link'>
+          <Link to='/posts' className='link'>
             Posts
           </Link>
           <Link to='/contacts' className='link' id='contacts-link'>
