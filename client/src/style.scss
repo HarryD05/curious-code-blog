@@ -125,6 +125,14 @@ p {
 
   #brand {
     align-items: center;
+    display: flex;
+    flex-direction: row;
+    a.secret {
+      div {
+        width: 10px;
+        height: var(--nav-height);
+      }
+    }
 
     h1 {
       font-size: 1.8rem;

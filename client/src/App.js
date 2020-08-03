@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { ProtectedRoute } from './ProtectedRoute';
 
 //Components
@@ -20,7 +20,7 @@ import './style.scss';
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
+      <Router>
         <Navbar />
         <Switch>
           <Route exact path='/' component={Home} />
@@ -32,7 +32,7 @@ class App extends React.Component {
 
           <Route path='*' component={Unknown} />
         </Switch>
-      </BrowserRouter>
+      </Router>
     );
   }
 }

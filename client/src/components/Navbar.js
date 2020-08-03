@@ -36,6 +36,9 @@ const Navbar = () => {
 
     return (
       <div id='brand'>
+        <Link to='secret' className="secret">
+          <div></div>
+        </Link>
         <Link to='/'>
           <div id='brand-section'><img src={image} alt='brain logo' /></div>
         </Link>
@@ -50,6 +53,7 @@ const Navbar = () => {
   return (
     <nav className='navbar'>
       <div className='nav-container'>
+
         {renderLogo()}
         <div id='links'>
           <Link to='/all-posts' className='link'>
