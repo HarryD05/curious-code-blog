@@ -25,8 +25,8 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/contacts' component={Contacts} />
-          <Route path='/posts' component={PostList} />
-          <Route path='/posts/:id' component={Post} />
+          <Route exact path='/posts' component={PostList} />
+          <Route exact path='/posts/:id' component={Post} />
           <Route exact path='/admin' component={Login} />
           <ProtectedRoute exact path='/admin/create' component={Create} />
 
